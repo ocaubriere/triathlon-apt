@@ -51,15 +51,16 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
   background:linear-gradient(160deg,var(--bleu-fonce) 0%,var(--bleu) 45%,var(--vert) 100%);
   color:#fff;padding:7rem 1.5rem 4rem}
-.hero::before{content:"";position:absolute;inset:0;z-index:1;opacity:.25;
-  background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.15) 45%,rgba(15,15,15,.65) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;opacity:.35;
+  background:linear-gradient(180deg,rgba(15,15,15,.6) 0%,rgba(15,15,15,.15) 45%,rgba(15,15,15,.7) 100%)}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg svg{width:100%;height:100%;display:block}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;
   gap:2.5rem;align-items:center}
 .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;margin:.8rem 0 1rem}
 .hero h1 .accent{color:var(--ocre-clair)}
-.hero p{font-size:1.1rem;max-width:520px;color:#dbe7f3;margin-bottom:1.8rem}
+.hero p{font-size:1.1rem;max-width:520px;color:#e8f0f7;margin-bottom:1.8rem}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
 .hero-art{filter:drop-shadow(0 12px 24px rgba(0,0,0,.25))}
 .chiffres{display:flex;gap:0;margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1.4rem;flex-wrap:wrap}
@@ -194,8 +195,7 @@ footer a{color:#e8b563}
 <!-- ======================= HERO ======================= -->
 <section class="hero" id="accueil">
   <div class="hero-bg" aria-hidden="true">
-    <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
-      <defs>
+    <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">      <defs>
         <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#1b1b1b"/><stop offset="55%" stop-color="#6b4f2a"/>
           <stop offset="85%" stop-color="#e8b563"/>
@@ -227,6 +227,8 @@ footer a{color:#e8b563}
         <path d="M1290 568 1282 592 M1282 592 1274 612 M1290 575 1302 582 1308 574 M1290 575 1278 586 1272 580 M1282 592 1294 602 1300 596" fill="none" stroke-width="4.5" stroke-linecap="round"/>
       </g>
     </svg>
+    <img src="ventoux-accueil.jpg" alt=""
+         onerror="this.remove()" />
   </div>
   <div class="wrap">
     <div>
@@ -322,8 +324,6 @@ footer a{color:#e8b563}
         </div>
       </article>
     </div>
-  </div>
-</section>
   </div>
 </section>
 
@@ -437,8 +437,6 @@ footer a{color:#e8b563}
     <div class="faq">
       <details><summary>Quel niveau faut-il pour rejoindre le club ?</summary>
         <p>Aucun prérequis : il faut savoir nager, mais la technique se construit avec nous. Le club accueille les sportifs dès 16 ans (autorisation parentale pour les mineurs), du loisir à la compétition.</p></details>
-      <details><summary>Puis-je essayer avant de me licencier ?</summary>
-        <p>Oui. Vous pouvez participer à quelques séances d'essai sans prendre de licence : contactez-nous pour venir à l'une des séances hebdomadaires.</p></details>
       <details><summary>Puis-je essayer avant de me licencier ?</summary>
         <p>Oui. Vous pouvez participer à quelques séances d'essai sans prendre de licence : contactez-nous pour venir à l'une des séances hebdomadaires.</p></details>
     </div>
