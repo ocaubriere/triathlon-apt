@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="TRIATHLON APT — club de triathlon à Apt (84400, Vaucluse), affilié FFTRI ligue PACA. Séances coachées par l'APT Académie, sorties vélo entre membres. Tous niveaux dès 16 ans." />
+<title>TRIATHLON APT — Club de triathlon dans le Luberon (Vaucluse)</title>
+<style>
+:root{
+  /* Charte issue du logo du club : noir & blanc, beige provençal, touche ocre */
+  --bleu:#1c1c1c; --bleu-fonce:#0f0f0f; --vert:#7a8450; --vert-clair:#a9b183;
+  --ocre:#c8862a; --ocre-clair:#e8b563; --blanc:#ffffff; --creme:#efe9da; --beige:#e8dcc0;
+  --ink:#1b2733; --gris:#5b6b7a;
+  --font-titre:"Arial Narrow","Segoe UI",Impact,system-ui,sans-serif;
+  --font-corps:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-corps);color:var(--ink);background:var(--creme);line-height:1.65}
+h1,h2,h3{font-family:var(--font-titre);text-transform:uppercase;letter-spacing:.03em}
+h2{font-size:clamp(1.7rem,3.5vw,2.6rem);color:var(--bleu-fonce);margin-bottom:.5rem}
+h3{font-size:1.2rem;color:var(--bleu)}
+img,svg{max-width:100%}
+a{color:var(--bleu)}
+section{padding:clamp(3rem,6vw,5rem) clamp(1rem,4vw,3rem)}
+.wrap{max-width:1120px;margin:0 auto}
+.sur-titre{display:inline-block;background:var(--ocre);color:#fff;font-weight:700;font-size:.78rem;
+  letter-spacing:.15em;text-transform:uppercase;padding:.3rem .8rem;border-radius:3px;margin-bottom:1rem}
+.sous-titre{color:var(--gris);max-width:640px;margin-bottom:2.2rem}
+
+/* ---------- Header / nav ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,15,15,.92);
+  backdrop-filter:blur(8px)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.7rem clamp(1rem,4vw,2.5rem);max-width:1280px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:.6rem;color:#fff;font-family:var(--font-titre);
+  font-size:1.25rem;letter-spacing:.08em;text-decoration:none;font-weight:700}
+.logo svg{width:34px;height:34px}
+.nav-liens{display:flex;gap:1.4rem;list-style:none}
+.nav-liens a{color:#e6eef7;text-decoration:none;font-size:.85rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;padding:.3rem 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-liens a:hover,.nav-liens a:focus{color:#fff;border-bottom-color:var(--ocre)}
+.btn{display:inline-block;background:var(--ocre);color:#fff !important;border:none;cursor:pointer;
+  font-weight:700;text-decoration:none;padding:.55rem 1.2rem;border-radius:4px;
+  text-transform:uppercase;letter-spacing:.08em;font-size:.85rem;transition:.2s}
+.btn:hover{background:var(--ocre-clair);color:var(--ink) !important;transform:translateY(-2px)}
+.btn-bleu{background:var(--bleu)}
+.btn-bleu:hover{background:var(--bleu-fonce);color:#fff !important}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,var(--bleu-fonce) 0%,var(--bleu) 45%,var(--vert) 100%);
+  color:#fff;padding:7rem 1.5rem 4rem}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;opacity:.25;
+  background:linear-gradient(180deg,rgba(15,15,15,.55) 0%,rgba(15,15,15,.15) 45%,rgba(15,15,15,.65) 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg svg{width:100%;height:100%;display:block}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;
+  gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;margin:.8rem 0 1rem}
+.hero h1 .accent{color:var(--ocre-clair)}
+.hero p{font-size:1.1rem;max-width:520px;color:#dbe7f3;margin-bottom:1.8rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-art{filter:drop-shadow(0 12px 24px rgba(0,0,0,.25))}
+.chiffres{display:flex;gap:0;margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.25);padding-top:1.4rem;flex-wrap:wrap}
+.chiffres div{margin-right:2.2rem}
+.chiffres strong{font-family:var(--font-titre);font-size:2rem;display:block;color:var(--ocre-clair)}
+.chiffres span{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:#c9d8e8}
+
+/* ---------- Sections génériques ---------- */
+.grille-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.grille-2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+.carte{background:#fff;border-radius:10px;padding:1.6rem;box-shadow:0 4px 18px rgba(27,39,51,.08);
+  border-top:4px solid var(--ocre)}
+.carte h3{margin-bottom:.5rem}
+.carte p{font-size:.95rem;color:var(--gris)}
+.picto{width:44px;height:44px;border-radius:8px;background:var(--creme);display:flex;
+  align-items:center;justify-content:center;margin-bottom:.9rem}
+.picto svg{width:26px;height:26px}
+.alt{background:var(--blanc)}
+
+/* ---------- Planning ---------- */
+.planning{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.seance{background:#fff;border-radius:8px;padding:1.1rem 1.2rem;border-left:5px solid var(--bleu);
+  box-shadow:0 3px 12px rgba(27,39,51,.07)}
+.seance.natation{border-left-color:#1c6fb8}
+.seance.velo{border-left-color:var(--ocre)}
+.seance.cap{border-left-color:var(--vert)}
+.seance b{display:block;font-family:var(--font-titre);letter-spacing:.05em;font-size:1.05rem}
+.seance .discipline{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--gris)}
+.seance .heure{font-size:.9rem;color:var(--bleu);font-weight:600;margin-top:.15rem;display:block}
+.seance .niveau{display:inline-block;font-size:.72rem;background:var(--creme);border:1px solid #e5dcc9;
+  border-radius:20px;padding:.1rem .6rem;margin:.4rem .3rem 0 0;color:var(--gris)}
+
+/* ---------- Agenda ---------- */
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;
+  box-shadow:0 4px 18px rgba(27,39,51,.08)}
+th{background:var(--bleu);color:#fff;text-align:left;padding:.8rem 1rem;font-size:.8rem;
+  text-transform:uppercase;letter-spacing:.1em}
+td{padding:.8rem 1rem;border-top:1px solid #eef1f5;font-size:.93rem}
+tr:hover td{background:#f4f8fc}
+.badge{display:inline-block;padding:.15rem .6rem;border-radius:20px;font-size:.72rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em}
+.b-vert{background:#e4f1e8;color:var(--vert)} .b-bleu{background:#e1edf8;color:var(--bleu)}
+.b-ocre{background:#faeed6;color:#96620f}
+
+/* ---------- Actus ---------- */
+.actu{display:flex;gap:1.1rem;background:#fff;border-radius:10px;overflow:hidden;
+  box-shadow:0 4px 18px rgba(27,39,51,.08)}
+.actu .visuel{flex:0 0 110px;background:linear-gradient(150deg,var(--bleu),var(--vert));
+  display:flex;align-items:center;justify-content:center}
+.actu .visuel svg{width:52px;height:52px}
+.actu .texte{padding:1rem 1.2rem 1rem 0}
+.actu time{font-size:.75rem;font-weight:700;color:var(--ocre);text-transform:uppercase;letter-spacing:.1em}
+.actu h3{margin:.2rem 0 .3rem}
+.actu p{font-size:.9rem;color:var(--gris)}
+
+/* ---------- Adhésion ---------- */
+.prix{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:2rem 0}
+.formule{background:#fff;border-radius:12px;padding:1.8rem;text-align:center;
+  box-shadow:0 4px 18px rgba(27,39,51,.08)}
+.formule.vedette{border:2px solid var(--ocre);position:relative}
+.formule.vedette::after{content:"Choix unique";position:absolute;top:-11px;left:50%;
+  transform:translateX(-50%);background:var(--ocre);color:#fff;font-size:.7rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:20px}
+.formule h3{color:var(--bleu-fonce)}
+.formule .tarif{font-family:var(--font-titre);font-size:2.3rem;color:var(--bleu);margin:.6rem 0 .2rem}
+.formule .tarif small{font-size:.9rem;color:var(--gris);font-family:var(--font-corps)}
+.formule ul{list-style:none;margin:1rem 0;text-align:left}
+.formule li{font-size:.9rem;color:var(--gris);padding:.3rem 0 .3rem 1.3rem;position:relative}
+.formule li::before{content:"✔";position:absolute;left:0;color:var(--vert)}
+.faq{max-width:760px;margin-top:2.5rem}
+.faq details{background:#fff;border-radius:8px;padding:1rem 1.2rem;margin-bottom:.7rem;
+  box-shadow:0 2px 10px rgba(27,39,51,.06)}
+.faq summary{font-weight:600;cursor:pointer;color:var(--bleu-fonce)}
+.faq p{margin-top:.6rem;font-size:.93rem;color:var(--gris)}
+
+/* ---------- Contact ---------- */
+form{background:#fff;padding:1.8rem;border-radius:12px;box-shadow:0 4px 18px rgba(27,39,51,.08)}
+label{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--bleu-fonce);display:block;margin:1rem 0 .3rem}
+input,textarea,select{width:100%;padding:.7rem .9rem;border:1.5px solid #d6dde5;border-radius:6px;
+  font-family:var(--font-corps);font-size:.95rem}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--bleu);border-color:var(--bleu)}
+form .btn{margin-top:1.4rem}
+form p.ok{margin-top:1rem;color:var(--vert);font-weight:600;display:none}
+.coordonnees li{list-style:none;padding:.45rem 0 .45rem 1.6rem;position:relative;font-size:.95rem}
+.coordonnees li::before{content:"📍";position:absolute;left:0}
+.coordonnees li.tel::before{content:"📞"} .coordonnees li.mail::before{content:"✉️"}
+
+/* ---------- Footer ---------- */
+footer{background:var(--bleu-fonce);color:#b9c9db;padding:2.5rem clamp(1rem,4vw,3rem);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center}
+footer a{color:#e8b563}
+
+/* ---------- Animations ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media(max-width:880px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{display:none}
+  .grille-3,.grille-2,.prix{grid-template-columns:1fr}
+  .nav-liens{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Navigation principale">
+    <a class="logo" href="#accueil" aria-label="Triathlon Apt — accueil">
+      <img src="https://dgalywyr863hv.cloudfront.net/pictures/clubs/2415673/59632192/1/large.jpg"
+           alt="Logo du club TRIATHLON APT" width="34" height="34"
+           style="border-radius:50%;object-fit:cover;border:2px solid #fff"
+           onerror="this.outerHTML='&lt;svg viewBox=\'0 0 48 56\' width=\'34\' height=\'34\' aria-hidden=\'true\'&gt;&lt;path d=\'M24 2 44 8v20c0 12-8 20-20 26C12 48 4 40 4 28V8Z\' fill=\'#0f0f0f\' stroke=\'#fff\' stroke-width=\'2\'/&gt;&lt;path d=\'M14 30h20v-9H14Zm10-9-11 4\' fill=\'none\' stroke=\'#fff\' stroke-width=\'2\' stroke-linejoin=\'round\'/&gt;&lt;path d=\'M13 25c-2 0-3 2-3 5\' stroke=\'#fff\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/&gt;&lt;circle cx=\'17\' cy=\'14\' r=\'2.2\' fill=\'#fff\'/&gt;&lt;path d=\'M19 20l-3-3-2 3\' stroke=\'#fff\' stroke-width=\'1.6\' fill=\'none\'/&gt;&lt;circle cx=\'31\' cy=\'14\' r=\'2.2\' fill=\'#fff\'/&gt;&lt;path d=\'M29 20l3-3 2 3\' stroke=\'#fff\' stroke-width=\'1.6\' fill=\'none\'/&gt;&lt;path d=\'M10 36h28\' stroke=\'#fff\' stroke-width=\'1.6\'/&gt;&lt;circle cx=\'14\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M12 45h5M16 45l1 4M12 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;circle cx=\'24\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M22 45h5M26 45l1 4M22 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;circle cx=\'34\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M32 45h5M36 45l1 4M32 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;/svg&gt;'" />
+      TRIATHLON APT
+    </a>
+    <ul class="nav-liens">
+      <li><a href="#club">Le club</a></li>
+      <li><a href="#encadrants">Encadrants</a></li>
+      <li><a href="#sections">Séances</a></li>
+      <li><a href="#calendrier">Calendrier</a></li>
+      <li><a href="#actus">Actualités</a></li>
+      <li><a href="#adhesion">Adhésion</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn" href="#adhesion">Rejoindre le club</a>
+  </nav>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="accueil">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1b1b1b"/><stop offset="55%" stop-color="#6b4f2a"/>
+          <stop offset="85%" stop-color="#e8b563"/>
+        </linearGradient>
+        <linearGradient id="loin" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#5a4433"/><stop offset="100%" stop-color="#3a2e22"/>
+        </linearGradient>
+      </defs>
+      <rect width="1440" height="700" fill="url(#ciel)"/>
+      <circle cx="1150" cy="330" r="55" fill="#f7d795" opacity=".95"/>
+      <circle cx="1150" cy="330" r="80" fill="#f7d795" opacity=".25"/>
+      <!-- crêtes lointaines du Luberon -->
+      <path d="M0 430 L140 330 260 400 400 300 540 400 660 330 800 410 940 300 1080 400 1220 330 1440 420 1440 700 0 700 Z" fill="url(#loin)" opacity=".8"/>
+      <!-- crêtes proches -->
+      <path d="M0 500 200 400 380 480 560 380 740 490 920 390 1100 490 1300 420 1440 480 1440 700 0 700 Z" fill="#2e2419"/>
+      <!-- versant avant avec forêt -->
+      <path d="M0 570 Q360 500 720 560 T1440 540 L1440 700 0 700 Z" fill="#33421f"/>
+      <path d="M0 630 Q400 580 800 620 T1440 600 L1440 700 0 700 Z" fill="#1f2c14"/>
+      <!-- cycliste en silhouette sur la crête -->
+      <g fill="#0f0f0f" stroke="#0f0f0f">
+        <circle cx="1090" cy="452" r="7"/>
+        <path d="M1090 459 1082 480 M1082 480 1074 496 M1090 463 1080 472 1072 468 M1082 480 1096 490 1102 484" fill="none" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="1068" cy="500" r="10" fill="none" stroke-width="4"/><circle cx="1108" cy="500" r="10" fill="none" stroke-width="4"/>
+        <path d="M1068 500 1082 480 1108 500 M1082 480 1090 470" fill="none" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- coureur -->
+      <g fill="#0f0f0f" stroke="#0f0f0f">
+        <circle cx="1290" cy="560" r="8"/>
+        <path d="M1290 568 1282 592 M1282 592 1274 612 M1290 575 1302 582 1308 574 M1290 575 1278 586 1272 580 M1282 592 1294 602 1300 596" fill="none" stroke-width="4.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="sur-titre">Club FFTRI — Ligue Provence-Alpes-Côte d'Azur</span>
+      <h1>Trois sports, une passion.<br><span class="accent">Le triathlon à Apt, capitale du Luberon</span></h1>
+      <p>TRIATHLON APT accueille les sportifs de tous niveaux  — Séances
+         coachées par l'APT Académie, sorties entre membres : chacun progresse à son rythme.</p>
+      <div class="hero-btns">
+        <a class="btn" href="#adhesion">Rejoignez le club</a>
+        <a class="btn btn-bleu" href="#sections">Voir les entraînements</a>
+      </div>
+      <div class="chiffres" role="list">
+        <div role="listitem"><strong>16+</strong><span>ouverts dès 16 ans</span></div>
+        <div role="listitem"><strong>3</strong><span>disciplines, 1 seul club</span></div>
+        <div role="listitem"><strong>2</strong><span>coachs diplômés (APT Académie)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= LE CLUB ======================= -->
+<section id="club">
+  <div class="wrap">
+    <span class="sur-titre">Le club</span>
+    <p class="sous-titre">TRIATHLON APT est un club où l'on vient d'abord pour ce que le
+       triathlon enseigne : la discipline, la régularité, l'humilité et le goût de l'effort.
+       Nager, pédaler et courir, enchaîner trois sports et se dépasser à chaque séance —
+       c'est cette école de persévérance que nos entraîneurs transmettent, dans une
+       ambiance simple et exigeante à la fois.</p>
+    <div class="grille-3">
+      <article class="carte reveal">
+        <div class="picto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8862a" stroke-width="2"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Persévérance</h3>
+        <p>Le triathlon ne pardonne pas l'improvisation : c'est la régularité de l'entraînement,
+           semaine après semaine, qui construit l'athlète. On vient, on bosse, on progresse.</p>
+      </article>
+      <article class="carte reveal" style="border-top-color:var(--ocre)">
+        <div class="picto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8862a" stroke-width="2"><path d="M17 8a5 5 0 1 0-10 0"/><path d="M2 21c0-4 3-6 7-6h6c4 0 7 2 7 6"/></svg>
+        </div>
+        <h3>Humilité</h3>
+        <p>Chacun mesure son effort contre lui-même. Le chrono du voisin importe peu :
+           ce qui compte, c'est sa propre progression, du débutant au compétiteur.</p>
+      </article>
+      <article class="carte reveal" style="border-top-color:var(--vert)">
+        <div class="picto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8862a" stroke-width="2"><path d="M8 13V5a2 2 0 1 1 4 0v6M12 11V4a2 2 0 1 1 4 0v7M16 11V6a2 2 0 1 1 4 0v9c0 4-3 7-7 7h-1c-4 0-7-3-7-7v-3"/></svg>
+        </div>
+        <h3>Dépassement de soi</h3>
+        <p>Enchaîner trois disciplines, c'est apprendre à aller chercher au fond de soi
+           ce qu'on ne croyait pas avoir. Cette force, elle sert aussi bien au-delà du sport.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ENCADRANTS ======================= -->
+<section id="encadrants" class="alt">
+  <div class="wrap">
+    <span class="sur-titre">Encadrement</span>
+    <h2>Nos entraîneurs</h2>
+    <p class="sous-titre">Les séances du club sont coachées par les deux encadrants de
+       l'<a href="https://apt-academie.com/academie" target="_blank" rel="noopener">APT Académie</a>
+       (Académie Performance Training), un staff sportif diplômé basé à Apt.</p>
+    <div class="grille-2">
+      <article class="carte reveal" style="border-top-color:var(--ocre);display:flex;gap:1.2rem;align-items:flex-start">
+        <img src="Guillaume LEPORS.jpeg" alt="Guillaume Lepors, entraîneur du club"
+             style="flex:0 0 90px;width:90px;height:90px;object-fit:cover;border-radius:45px;border:3px solid var(--ocre)"
+             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 90 90\' style=\'flex:0 0 90px\' role=\'img\' aria-label=\'Portrait Guillaume Lepors\'&gt;&lt;rect width=\'90\' height=\'90\' rx=\'45\' fill=\'#efe9da\'/&gt;&lt;circle cx=\'45\' cy=\'36\' r=\'15\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M15 82c4-16 15-22 30-22s26 6 30 22Z\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M52 22 46 30h11l-2 10\' stroke=\'#c8862a\' stroke-width=\'3\' fill=\'none\'/&gt;&lt;/svg&gt;'" />
+        <div>
+          <h3>Guillaume Lepors</h3>
+          <p>Ancien professeur d'EPS (2005–2023), créateur et responsable de la section
+             sportive triathlon du collège Victor Hugo (28 titres nationaux UNSS avec ses
+             élèves, plus de 500 jeunes formés). Entraîneur de triathlon depuis 2003 à
+             Issy Triathlon, encadrant sur stages Ligue et FFTRI, il a accompagné des
+             athlètes de haut niveau (Léonie Périault, Audrey Merle, Cécile Lejeune,
+             Ambre Grasset). Créateur de l'Académie Performance Training, il met
+             20 ans d'expérience au service du club — du débutant au nageur expert.</p>
+        </div>
+      </article>
+      <article class="carte reveal" style="border-top-color:var(--ocre);display:flex;gap:1.2rem;align-items:flex-start">
+        <img src="Kierian DIVARET.jpg" alt="Kierian Divaret, entraîneur du club"
+             style="flex:0 0 90px;width:90px;height:90px;object-fit:cover;border-radius:45px;border:3px solid var(--ocre)"
+             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 90 90\' style=\'flex:0 0 90px\' role=\'img\' aria-label=\'Portrait Kierian Divaret\'&gt;&lt;rect width=\'90\' height=\'90\' rx=\'45\' fill=\'#efe9da\'/&gt;&lt;circle cx=\'45\' cy=\'36\' r=\'15\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M15 82c4-16 15-22 30-22s26 6 30 22Z\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M30 30l4-3 4 3-4 3z M52 30l4-3 4 3-4 3z\' fill=\'#c8862a\'/&gt;&lt;/svg&gt;'" />
+        <div>
+          <h3>Kierian Divaret</h3>
+          <p>Titulaire d'un Master STAPS en ingénierie et ergonomie du sport, ancien
+             nageur en Nationale 2, entraîneur de triathlon depuis 2020. Sa double
+             culture de nageur de haut niveau et de préparateur physique apporte au club
+             un encadrement rigoureux, technique et attentif à chacun.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+<!-- ======================= SECTIONS ======================= -->
+<section id="sections" class="alt">
+  <div class="wrap">
+    <span class="sur-titre">Séances</span>
+    <h2>Trois disciplines, un même esprit</h2>
+    <p class="sous-titre">Les entrainements sont adaptés à votre niveau.</p>
+    <div class="grille-3">
+      <article class="carte reveal" style="border-top-color:#1c6fb8">
+        <div class="picto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1c6fb8" stroke-width="2"><path d="M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 17c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M2 7c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>
+        </div>
+        <h3>Natation</h3>
+        <p>Séances encadrées à la piscine de la cité scolaire d'Apt : technique et intervalles.</p>
+        <p style="margin-top:.6rem"><strong>Lundi &amp; jeudi</strong> — 19h00 à 20h15, cité scolaire d'Apt</p>
+        <p style="margin-top:.5rem;font-size:.85rem;color:var(--gris)"><strong>Matériel à apporter :</strong> lunettes, pull-buoy, palmes, tuba frontal, planche et plaquettes.</p>
+      </article>
+      <article class="carte reveal" style="border-top-color:var(--ocre)">
+        <div class="picto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c8862a" stroke-width="2"><circle cx="6" cy="18" r="4"/><circle cx="18" cy="18" r="4"/><path d="M6 18 11 8h4l3 10M11 8 9 5h4"/></svg>
+        </div>
+        <h3>Cyclisme</h3>
+        <p>Sorties routières entre membres du club, dans le Luberon et vers les
+           cols de la région. Chacun roule selon son niveau, dans un esprit de groupe.</p>
+        <p style="margin-top:.6rem"><strong>Dimanche matin</strong> — départ de l'office de tourisme d'Apt</p>
+      </article>
+      <article class="carte reveal" style="border-top-color:var(--vert)">
+        <div class="picto" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3d7a4f" stroke-width="2"><circle cx="14" cy="5" r="3"/><path d="M13 8l-3 5 4 2 1 6M10 13l-4 1M15 10l3 3-2 4"/></svg>
+        </div>
+        <h3>Course à pied</h3>
+        <p>Séance de fractionné encadrée sur la piste de la cité scolaire d'Apt : vma, seuil,
+           puissance — tout est travaillé avec un souci de progression.</p>
+        <p style="margin-top:.6rem"><strong>Jeudi</strong> — 18h00, piste de la cité scolaire d'Apt</p>
+      </article>
+    </div>
+
+    <h3 style="margin:2.5rem 0 1rem">Planning hebdomadaire</h3>
+    <div class="planning">
+      <div class="seance natation"><span class="discipline">Natation · coachée</span><b>Lundi</b><span class="heure">19h00 – 20h15 · Piscine de la cité scolaire d'Apt</span><span class="niveau">Tous niveaux</span></div>
+      <div class="seance cap"><span class="discipline">Fractionné · coaché</span><b>Jeudi</b><span class="heure">18h00 – · Piste de la cité scolaire d'Apt</span><span class="niveau">Course à pied</span><span class="niveau">Tous niveaux</span></div>
+      <div class="seance natation"><span class="discipline">Natation · coachée</span><b>Jeudi</b><span class="heure">19h00 – 20h15 · Piscine de la cité scolaire d'Apt</span><span class="niveau">Tous niveaux</span></div>
+      <div class="seance velo"><span class="discipline">Sortie vélo · club</span><b>Dimanche</b><span class="heure">Départ 9h00 · Office de tourisme d'Apt</span><span class="niveau">Non coachée</span><span class="niveau">Organisée par les membres</span></div>
+    </div>
+    <p style="margin-top:1.2rem;font-size:.9rem;color:var(--gris)">
+      <strong>À noter :</strong> les séances coachées (natation, fractionné) sont encadrées par
+      Guillaume Lepors et Kierian Divaret de l'APT Académie et ont lieu pendant les périodes
+      scolaires — <em>il n'y a pas de séances coachées pendant les vacances scolaires</em>.
+      Les sorties du dimanche matin sont organisées par les membres du club, départ de
+      l'office de tourisme d'Apt.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= CALENDRIER ======================= -->
+<section id="calendrier">
+  <div class="wrap">
+    <span class="sur-titre">Calendrier</span>
+    <h2>Compétitions &amp; sorties club</h2>
+    <p class="sous-titre">Le calendrier des compétitions et sorties club seront publiés ici prochainement.</p>
+    <div style="background:#fff;border:2px dashed #d6cdb4;border-radius:10px;padding:2.5rem;text-align:center;color:var(--gris)">
+      <p style="font-weight:600;color:var(--ink)">Calendrier des compétitions à venir</p>
+      <p style="font-size:.9rem;margin-top:.3rem">Les prochains rendez-vous de la saison seront annoncés ici.</p>
+    </div>
+    <p style="margin-top:1rem;font-size:.85rem;color:var(--gris)">
+      Retrouvez l'agenda officiel des courses sur le site de la
+      <a href="https://www.triathlonprovencealpescotedazur.com/" target="_blank" rel="noopener">ligue PACA de triathlon</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= ACTUS ======================= -->
+<section id="actus" class="alt">
+  <div class="wrap">
+    <span class="sur-titre">Actualités</span>
+    <h2>La vie du club</h2>
+    <p class="sous-titre">Les actualités du club (résultats, comptes rendus, annonces)
+       seront publiées ici prochainement.</p>
+    <div style="background:#fff;border:2px dashed #d6cdb4;border-radius:10px;padding:2.5rem;text-align:center;color:var(--gris)">
+      <p style="font-weight:600;color:var(--ink)">Bientôt disponible</p>
+      <p style="font-size:.9rem;margin-top:.3rem">Les prochaines actualités du club apparaîtront dans cette rubrique.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ADHESION ======================= -->
+<section id="adhesion">
+  <div class="wrap">
+    <span class="sur-titre">Adhésion</span>
+    <h2>Rejoignez TRIATHLON APT</h2>
+    <p class="sous-titre">Tous niveaux dès 16 ans — les mineurs rejoignent le club sous réserve
+       d'une autorisation parentale. Vous pouvez venir essayer quelques séances avant de
+       vous licencier : c'est le meilleur moyen de découvrir le club, sans engagement.</p>
+    <div class="prix" style="grid-template-columns:1fr">
+      <div class="formule vedette reveal" style="max-width:520px;margin:0 auto">
+        <h3>Licence annuelle</h3>
+        <p class="tarif">218,15 €<small> / saison</small></p>
+        <ul>
+          <li>Dont 100 € de cotisations club</li>
+          <li>Licence FFTRI incluse (assurance fédérale)</li>
+          <li>Accès à toutes les séances coachées</li>
+          <li>Sorties vélo entre membres le dimanche</li>
+          <li>Convivialité et esprit club</li>
+        </ul>
+        <a class="btn" href="https://registration.fftri.com/" target="_blank" rel="noopener">S'inscrire sur le site FFTRI</a>
+        <p style="margin-top:.8rem;font-size:.8rem;color:var(--gris)">Paiement directement en ligne sur le site de la FFTRI.</p>
+      </div>
+    </div>
+    <div class="faq">
+      <details><summary>Quel niveau faut-il pour rejoindre le club ?</summary>
+        <p>Aucun prérequis : il faut savoir nager, mais la technique se construit avec nous. Le club accueille les sportifs dès 16 ans (autorisation parentale pour les mineurs), du loisir à la compétition.</p></details>
+      <details><summary>Puis-je essayer avant de me licencier ?</summary>
+        <p>Oui. Vous pouvez participer à quelques séances d'essai sans prendre de licence : contactez-nous pour venir à l'une des séances hebdomadaires.</p></details>
+      <details><summary>Puis-je essayer avant de me licencier ?</summary>
+        <p>Oui. Vous pouvez participer à quelques séances d'essai sans prendre de licence : contactez-nous pour venir à l'une des séances hebdomadaires.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section id="contact" class="alt">
+  <div class="wrap">
+    <span class="sur-titre">Contact</span>
+    <h2>Venez nous rencontrer</h2>
+    <p class="sous-titre">Une question, une envie d'essayer ? Écrivez-nous ou rejoignez-nous
+       directement à une séance.</p>
+    <div class="grille-2">
+      <div>
+        <ul class="coordonnees">
+          <li><strong>TRIATHLON APT</strong><br>22 allée des Bourguignons<br>84400 Apt, Vaucluse</li>
+          <li class="mail">club.triathlon.apt@gmail.com</li>
+          <li class="tel">06 07 36 20 45</li>
+        </ul>
+        <p style="margin:1.5rem 0 .5rem;font-weight:700;color:var(--bleu-fonce)">Retrouvez-nous</p>
+        <p style="font-size:.95rem">
+          <a href="https://fftri.t2area.com/clubs/triathlon-apt.html" target="_blank" rel="noopener">Notre page FFTRI</a>
+        </p>
+        <div style="margin-top:1.5rem;border-radius:10px;overflow:hidden;box-shadow:0 4px 18px rgba(27,39,51,.08)">
+          <svg viewBox="0 0 500 240" role="img" aria-label="Carte illustrée d'Apt et du Luberon" style="display:block;width:100%">
+            <rect width="500" height="240" fill="#eaf2e6"/>
+            <path d="M0 240 C80 180 180 200 260 150 C330 110 420 140 500 100 L500 240 Z" fill="#c9dca0"/>
+            <path d="M0 240 C100 200 200 215 300 175 C380 145 450 165 500 140 L500 240 Z" fill="#a9c87e"/>
+            <g stroke="#8aa86a" stroke-width="2" fill="none"><path d="M40 240 C120 205 220 220 320 185"/><path d="M90 240 C170 210 260 225 360 195"/></g>
+            <text x="250" y="70" font-family="Arial Narrow,sans-serif" font-size="20" fill="#5b6b7a" text-anchor="middle">LUBERON</text>
+            <circle cx="250" cy="120" r="9" fill="#c8862a"/>
+            <circle cx="250" cy="120" r="16" fill="none" stroke="#c8862a" stroke-width="2" opacity=".5"/>
+            <text x="250" y="105" font-family="Arial Narrow,sans-serif" font-size="14" font-weight="bold" fill="#083a68" text-anchor="middle">APT</text>
+            <text x="340" y="60" font-family="Arial Narrow,sans-serif" font-size="12" fill="#5b6b7a" text-anchor="middle">Mont Ventoux ↑</text>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <form id="form-contact" novalidate>
+          <label for="nom">Nom</label>
+          <input id="nom" name="nom" type="text" autocomplete="name" required />
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+          <label for="sujet">Sujet</label>
+          <select id="sujet" name="sujet">
+            <option>Séance d'essai</option>
+            <option>Adhésion / licence</option>
+            <option>Entraînements</option>
+            <option>Compétitions</option>
+            <option>Autre</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button class="btn" type="submit">Envoyer</button>
+          <p class="ok" id="ok" role="status">Merci ! Votre message a bien été pris en compte. Nous vous répondons rapidement.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>TRIATHLON APT</strong> — 22 allée des Bourguignons, 84400 Apt<br>
+       club.triathlon.apt@gmail.com · 06 07 36 20 45<br>
+       Association affiliée à la FFTRI · Ligue Provence-Alpes-Côte d'Azur</p>
+    <p><a href="#accueil">Haut de page</a> · <a href="#adhesion">Adhésion</a> ·
+       <a href="#contact">Contact</a></p>
+  </div>
+</footer>
+
+<script>
+// Apparition au scroll
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Formulaire de contact (démonstration)
+document.getElementById('form-contact').addEventListener('submit', e => {
+  e.preventDefault();
+  const form = e.target;
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  document.getElementById('ok').style.display = 'block';
+  form.reset();
+});
+</script>
+</body>
+</html>
