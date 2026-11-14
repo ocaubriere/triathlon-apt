@@ -38,6 +38,9 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;
 .logo svg{width:48px;height:48px;flex-shrink:0}
 .nav-liens{display:flex;gap:1.4rem;list-style:none}
 .nav-liens a{color:#e6eef7;text-decoration:none;font-size:.85rem;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;padding:.4rem 0;border-bottom:2px solid transparent}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:transform .25s,opacity .25s}
   letter-spacing:.06em;text-transform:uppercase;padding:.3rem 0;border-bottom:2px solid transparent;transition:.2s}
 .nav-liens a:hover,.nav-liens a:focus{color:#fff;border-bottom-color:var(--ocre)}
 .btn{display:inline-block;background:var(--ocre);color:#fff !important;border:none;cursor:pointer;
@@ -172,7 +175,12 @@ footer a{color:#e8b563}
     linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,.85) 100%)}
   .hero-art{display:none}
   .grille-3,.grille-2,.prix{grid-template-columns:1fr}
-  .nav-liens{display:none}
+  .burger{display:flex}
+  nav .btn{padding:.55rem .9rem;font-size:.85rem}
+  .nav-liens{display:none;position:absolute;top:100%;left:0;right:0;
+    background:rgba(15,15,15,.97);flex-direction:column;padding:1.1rem 1.5rem 1.4rem;gap:1rem}
+  .nav-liens.ouvert{display:flex}
+  .nav-liens a{font-size:1rem;padding:.5rem 0}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
@@ -198,6 +206,9 @@ footer a{color:#e8b563}
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="btn" href="#adhesion">Rejoindre le club</a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 </header>
 
@@ -519,6 +530,18 @@ footer a{color:#e8b563}
 </footer>
 
 <script>
+// Menu mobile (burger)
+const burger = document.querySelector('.burger');
+const navLiens = document.querySelector('.nav-liens');
+burger.addEventListener('click', () => {
+  const ouvert = navLiens.classList.toggle('ouvert');
+  burger.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+});
+navLiens.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLiens.classList.remove('ouvert');
+  burger.setAttribute('aria-expanded', 'false');
+}));
+
 // Apparition au scroll
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
