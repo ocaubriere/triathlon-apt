@@ -495,9 +495,8 @@ footer a{color:#e8b563}
     <h2>Venez nous rencontrer</h2>
     <p class="sous-titre">Une question, une envie d'essayer ? Écrivez-nous ou rejoignez-nous
        directement à une séance.</p>
-    <div class="grille-2">
-      <div>
-        <ul class="coordonnees">
+    <div>
+      <ul class="coordonnees">
           <li><strong>TRIATHLON APT</strong><br>22 allée des Bourguignons<br>84400 Apt, Vaucluse</li>
           <li class="mail">club.triathlon.apt@gmail.com</li>
           <li class="tel">06 07 36 20 45</li>
@@ -519,26 +518,6 @@ footer a{color:#e8b563}
             <text x="340" y="60" font-family="Arial Narrow,sans-serif" font-size="12" fill="#5b6b7a" text-anchor="middle">Mont Ventoux ↑</text>
           </svg>
         </div>
-      </div>
-      <div>
-        <form id="form-contact" novalidate>
-          <label for="nom">Nom</label>
-          <input id="nom" name="nom" type="text" autocomplete="name" required />
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-          <label for="sujet">Sujet</label>
-          <select id="sujet" name="sujet">
-            <option>Séance d'essai</option>
-            <option>Adhésion / licence</option>
-            <option>Entraînements</option>
-            <option>Compétitions</option>
-            <option>Autre</option>
-          </select>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-          <button class="btn" type="submit">Envoyer</button>
-          <p class="ok" id="ok" role="status">Merci ! Votre message a bien été pris en compte. Nous vous répondons rapidement.</p>
-        </form>
       </div>
     </div>
   </div>
@@ -573,14 +552,6 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Formulaire de contact (démonstration)
-document.getElementById('form-contact').addEventListener('submit', e => {
-  e.preventDefault();
-  const form = e.target;
-  if (!form.checkValidity()) { form.reportValidity(); return; }
-  document.getElementById('ok').style.display = 'block';
-  form.reset();
-});
 </script>
 </body>
 </html>
