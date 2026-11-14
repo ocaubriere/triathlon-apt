@@ -183,6 +183,17 @@ footer a{color:#e8b563}
   .nav-liens a{font-size:1rem;padding:.5rem 0}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* ---- Partenaires ---- */
+.partenaires{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.partenaires a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;
+  background:#fff;border-radius:12px;padding:1.8rem 1.2rem;text-decoration:none;color:var(--ink);
+  box-shadow:0 2px 10px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s}
+.partenaires a:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.partenaires img{max-width:170px;max-height:95px;width:auto;height:auto;object-fit:contain}
+.partenaires .marque{font-family:var(--font-titre);font-weight:700;letter-spacing:.06em;
+  font-size:1.05rem;text-align:center;line-height:1.3}
+.partenaires small{color:var(--gris);font-size:.8rem;text-align:center}
+@media (max-width:760px){.partenaires{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -436,6 +447,32 @@ footer a{color:#e8b563}
         <p>Aucun prérequis : il faut savoir nager, mais la technique se construit avec nous. Le club accueille les sportifs dès 16 ans (autorisation parentale pour les mineurs), du loisir à la compétition.</p></details>
       <details><summary>Puis-je essayer avant de me licencier ?</summary>
         <p>Oui. Vous pouvez participer à quelques séances d'essai sans prendre de licence : contactez-nous pour venir à l'une des séances hebdomadaires.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PARTENAIRES ======================= -->
+<section id="partenaires" class="alt">
+  <div class="wrap">
+    <span class="sur-titre">Nos partenaires</span>
+    <h2>Ils soutiennent le club</h2>
+    <div class="partenaires">
+      <a href="https://apt-academie.com/" target="_blank" rel="noopener">
+        <span class="marque">APT<br>ACADEMIE</span>
+        <small>Académie Performance Training — entraînement et coaching</small>
+      </a>
+      <a href="https://www.apt.fr/" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Blason_ville_fr_Apt_%28Vaucluse%29.svg/512px-Blason_ville_fr_Apt_%28Vaucluse%29.svg.png"
+             alt="Blason de la Ville d'Apt"
+             onerror="this.outerHTML='<span class=\'marque\'>VILLE D\'APT</span>'" />
+        <small>Ville d'Apt</small>
+      </a>
+      <a href="https://blachere-illumination.com/" target="_blank" rel="noopener">
+        <img src="https://blachere-illumination.com/wp-content/uploads/2024/12/blachere_logo.svg"
+             alt="Blachère Illumination"
+             onerror="this.outerHTML='<span class=\'marque\'>BLACHÈRE<br>ILLUMINATION</span>'" />
+        <small>Blachère Illumination — fabricant d'illuminations à Apt</small>
+      </a>
     </div>
   </div>
 </section>
