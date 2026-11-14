@@ -163,7 +163,13 @@ footer a{color:#e8b563}
 
 /* ---------- Responsive ---------- */
 @media(max-width:880px){
-  .hero .wrap{grid-template-columns:1fr}
+  .hero{min-height:75vw;padding:0 1.2rem 2.5rem;display:flex;align-items:flex-end}
+  .hero .wrap{grid-template-columns:1fr;gap:0}
+  .hero-bg{position:absolute;inset:0}
+  .hero-bg svg{display:none}
+  .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  .hero::before{background:
+    linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,.85) 100%)}
   .hero-art{display:none}
   .grille-3,.grille-2,.prix{grid-template-columns:1fr}
   .nav-liens{display:none}
