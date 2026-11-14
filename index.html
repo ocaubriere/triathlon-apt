@@ -61,8 +61,6 @@ section{scroll-margin-top:75px}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg svg{width:100%;height:100%;display:block}
 .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 60%}
-.hero-bg img.tour-ventoux{object-position:65% 25%}
-@media (max-width:760px){.hero-bg img.tour-ventoux{object-position:82% 12%}}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;
   gap:2.5rem;align-items:center}
 .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;margin:.8rem 0 1rem;
@@ -173,8 +171,6 @@ footer a{color:#e8b563}
   .hero-bg{position:absolute;inset:0}
   .hero-bg svg{display:none}
   .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 60%}
-.hero-bg img.tour-ventoux{object-position:65% 25%}
-@media (max-width:760px){.hero-bg img.tour-ventoux{object-position:82% 12%}}
   .hero::before{background:
     linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,.85) 100%)}
   .hero-art{display:none}
@@ -261,9 +257,8 @@ footer a{color:#e8b563}
         <path d="M1290 568 1282 592 M1282 592 1274 612 M1290 575 1302 582 1308 574 M1290 575 1278 586 1272 580 M1282 592 1294 602 1300 596" fill="none" stroke-width="4.5" stroke-linecap="round"/>
       </g>
     </svg>
-    <img src="ventoux-sommet.jpg" alt="Le mont Ventoux et sa tour blanche et rouge, cycliste sur la route d'ascension"
-         class="tour-ventoux"
-         onerror="this.onerror=null;this.src='ventoux-accueil.jpg';this.classList.remove('tour-ventoux')" />
+    <img src="ventoux-accueil.jpg" alt=""
+         onerror="this.remove()" />
   </div>
   <div class="wrap">
     <div>
