@@ -34,8 +34,8 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,15,15,.
 nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;
   padding:.7rem clamp(1rem,4vw,2.5rem);max-width:1280px;margin:0 auto}
 .logo{display:flex;align-items:center;gap:.6rem;color:#fff;font-family:var(--font-titre);
-  font-size:1.25rem;letter-spacing:.08em;text-decoration:none;font-weight:700}
-.logo svg{width:48px;height:48px;flex-shrink:0}
+  font-size:1.25rem;letter-spacing:.08em;text-decoration:none;font-weight:700;white-space:nowrap}
+.logo svg{width:56px;height:56px;flex-shrink:0}
 .nav-liens{display:flex;gap:1.4rem;list-style:none}
 .nav-liens a{color:#e6eef7;text-decoration:none;font-size:.85rem;font-weight:600;
   letter-spacing:.04em;text-transform:uppercase;padding:.4rem 0;border-bottom:2px solid transparent}
@@ -191,9 +191,9 @@ footer a{color:#e8b563}
   <nav aria-label="Navigation principale">
     <a class="logo" href="#accueil" aria-label="Triathlon Apt — accueil">
       <img src="https://dgalywyr863hv.cloudfront.net/pictures/clubs/2415673/59632192/1/large.jpg"
-           alt="Logo du club TRIATHLON APT" width="34" height="34"
+           alt="Logo du club TRIATHLON APT" width="56" height="56"
            style="border-radius:50%;object-fit:cover;border:2px solid #fff"
-           onerror="this.outerHTML='&lt;svg viewBox=\'0 0 48 56\' width=\'34\' height=\'34\' aria-hidden=\'true\'&gt;&lt;path d=\'M24 2 44 8v20c0 12-8 20-20 26C12 48 4 40 4 28V8Z\' fill=\'#0f0f0f\' stroke=\'#fff\' stroke-width=\'2\'/&gt;&lt;path d=\'M14 30h20v-9H14Zm10-9-11 4\' fill=\'none\' stroke=\'#fff\' stroke-width=\'2\' stroke-linejoin=\'round\'/&gt;&lt;path d=\'M13 25c-2 0-3 2-3 5\' stroke=\'#fff\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/&gt;&lt;circle cx=\'17\' cy=\'14\' r=\'2.2\' fill=\'#fff\'/&gt;&lt;path d=\'M19 20l-3-3-2 3\' stroke=\'#fff\' stroke-width=\'1.6\' fill=\'none\'/&gt;&lt;circle cx=\'31\' cy=\'14\' r=\'2.2\' fill=\'#fff\'/&gt;&lt;path d=\'M29 20l3-3 2 3\' stroke=\'#fff\' stroke-width=\'1.6\' fill=\'none\'/&gt;&lt;path d=\'M10 36h28\' stroke=\'#fff\' stroke-width=\'1.6\'/&gt;&lt;circle cx=\'14\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M12 45h5M16 45l1 4M12 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;circle cx=\'24\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M22 45h5M26 45l1 4M22 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;circle cx=\'34\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M32 45h5M36 45l1 4M32 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;/svg&gt;'" />
+           onerror="this.outerHTML='&lt;svg viewBox=\'0 0 48 56\' width='56' height='56' aria-hidden=\'true\'&gt;&lt;path d=\'M24 2 44 8v20c0 12-8 20-20 26C12 48 4 40 4 28V8Z\' fill=\'#0f0f0f\' stroke=\'#fff\' stroke-width=\'2\'/&gt;&lt;path d=\'M14 30h20v-9H14Zm10-9-11 4\' fill=\'none\' stroke=\'#fff\' stroke-width=\'2\' stroke-linejoin=\'round\'/&gt;&lt;path d=\'M13 25c-2 0-3 2-3 5\' stroke=\'#fff\' stroke-width=\'2\' fill=\'none\' stroke-linecap=\'round\'/&gt;&lt;circle cx=\'17\' cy=\'14\' r=\'2.2\' fill=\'#fff\'/&gt;&lt;path d=\'M19 20l-3-3-2 3\' stroke=\'#fff\' stroke-width=\'1.6\' fill=\'none\'/&gt;&lt;circle cx=\'31\' cy=\'14\' r=\'2.2\' fill=\'#fff\'/&gt;&lt;path d=\'M29 20l3-3 2 3\' stroke=\'#fff\' stroke-width=\'1.6\' fill=\'none\'/&gt;&lt;path d=\'M10 36h28\' stroke=\'#fff\' stroke-width=\'1.6\'/&gt;&lt;circle cx=\'14\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M12 45h5M16 45l1 4M12 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;circle cx=\'24\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M22 45h5M26 45l1 4M22 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;circle cx=\'34\' cy=\'42\' r=\'1.6\' fill=\'#fff\'/&gt;&lt;path d=\'M32 45h5M36 45l1 4M32 45l-1 4\' stroke=\'#fff\' stroke-width=\'1.3\' fill=\'none\'/&gt;&lt;/svg&gt;'" />
       TRIATHLON APT
     </a>
     <ul class="nav-liens">
@@ -205,7 +205,6 @@ footer a{color:#e8b563}
       <li><a href="#adhesion">Adhésion</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="btn" href="#adhesion">Rejoindre le club</a>
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -319,7 +318,7 @@ footer a{color:#e8b563}
       <article class="carte reveal" style="border-top-color:var(--ocre);display:flex;gap:1.2rem;align-items:flex-start">
         <img src="Guillaume LEPORS.jpeg" alt="Guillaume Lepors, entraîneur du club"
              style="flex:0 0 90px;width:90px;height:90px;object-fit:cover;border-radius:45px;border:3px solid var(--ocre)"
-             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 90 90\' style=\'flex:0 0 90px\' role=\'img\' aria-label=\'Portrait Guillaume Lepors\'&gt;&lt;rect width=\'90\' height=\'90\' rx=\'45\' fill=\'#efe9da\'/&gt;&lt;circle cx=\'45\' cy=\'36\' r=\'15\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M15 82c4-16 15-22 30-22s26 6 30 22Z\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M52 22 46 30h11l-2 10\' stroke=\'#c8862a\' stroke-width=\'3\' fill=\'none\'/&gt;&lt;/svg&gt;'" />
+             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 90 90\' style=\'flex:0 0 90px\' role=\'img\' aria-label=\'Portrait Guillaume Lepors\'&gt;&lt;rect width='56' height='56' rx=\'45\' fill=\'#efe9da\'/&gt;&lt;circle cx=\'45\' cy=\'36\' r=\'15\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M15 82c4-16 15-22 30-22s26 6 30 22Z\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M52 22 46 30h11l-2 10\' stroke=\'#c8862a\' stroke-width=\'3\' fill=\'none\'/&gt;&lt;/svg&gt;'" />
         <div>
           <h3>Guillaume Lepors</h3>
           <p>Ancien professeur d'EPS (2005–2023), créateur et responsable de la section
@@ -334,7 +333,7 @@ footer a{color:#e8b563}
       <article class="carte reveal" style="border-top-color:var(--ocre);display:flex;gap:1.2rem;align-items:flex-start">
         <img src="Kierian DIVARET.jpg" alt="Kierian Divaret, entraîneur du club"
              style="flex:0 0 90px;width:90px;height:90px;object-fit:cover;border-radius:45px;border:3px solid var(--ocre)"
-             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 90 90\' style=\'flex:0 0 90px\' role=\'img\' aria-label=\'Portrait Kierian Divaret\'&gt;&lt;rect width=\'90\' height=\'90\' rx=\'45\' fill=\'#efe9da\'/&gt;&lt;circle cx=\'45\' cy=\'36\' r=\'15\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M15 82c4-16 15-22 30-22s26 6 30 22Z\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M30 30l4-3 4 3-4 3z M52 30l4-3 4 3-4 3z\' fill=\'#c8862a\'/&gt;&lt;/svg&gt;'" />
+             onerror="this.outerHTML='&lt;svg viewBox=\'0 0 90 90\' style=\'flex:0 0 90px\' role=\'img\' aria-label=\'Portrait Kierian Divaret\'&gt;&lt;rect width='56' height='56' rx=\'45\' fill=\'#efe9da\'/&gt;&lt;circle cx=\'45\' cy=\'36\' r=\'15\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M15 82c4-16 15-22 30-22s26 6 30 22Z\' fill=\'#1c1c1c\'/&gt;&lt;path d=\'M30 30l4-3 4 3-4 3z M52 30l4-3 4 3-4 3z\' fill=\'#c8862a\'/&gt;&lt;/svg&gt;'" />
         <div>
           <h3>Kierian Divaret</h3>
           <p>Titulaire d'un Master STAPS en ingénierie et ergonomie du sport, ancien
