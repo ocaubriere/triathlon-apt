@@ -157,7 +157,7 @@ tr:hover td{background:#f4f8fc}
 .actu p{font-size:.9rem;color:var(--gris)}
 
 /* ---------- Adhésion ---------- */
-.prix{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:2rem 0}
+.grp-cartes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin:2rem 0}
 .formule{position:relative;background:#fff;border-radius:12px;padding:1.8rem;text-align:center;
   box-shadow:0 4px 18px rgba(27,39,51,.08)}
 .formule.vedette{border:2px solid var(--ocre);position:relative}
@@ -169,9 +169,9 @@ tr:hover td{background:#f4f8fc}
   color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   padding:.2rem .7rem;border-radius:20px;z-index:1}
 .pill-vert{background:var(--vert)}
-.prix-duo{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;margin:0 auto}
-.formule .tarif{font-family:var(--font-titre);font-size:2.3rem;color:var(--bleu);margin:.6rem 0 .2rem}
-.formule .tarif small{font-size:.9rem;color:var(--gris);font-family:var(--font-corps)}
+.grp-cartes-duo{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;margin:0 auto}
+.formule .montant{font-family:var(--font-titre);font-size:2.3rem;color:var(--bleu);margin:.6rem 0 .2rem}
+.formule .montant small{font-size:.9rem;color:var(--gris);font-family:var(--font-corps)}
 .formule ul{list-style:none;margin:1rem 0;text-align:left}
 .formule li{font-size:.9rem;color:var(--gris);padding:.3rem 0 .3rem 1.3rem;position:relative}
 .formule li::before{content:"✔";position:absolute;left:0;color:var(--vert)}
@@ -214,7 +214,7 @@ footer a{color:#e8b563}
   .hero-bg .bg-mobile{display:block;object-position:55% 62%}
   .hero::before{background:linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.35) 45%,rgba(10,10,10,.85) 100%)}
   .hero-art{display:none}
-  .grille-3,.grille-2,.prix{grid-template-columns:1fr}
+  .grille-3,.grille-2,.grp-cartes{grid-template-columns:1fr}
   .burger{display:flex}
   nav .btn{padding:.55rem .9rem;font-size:.85rem}
   .nav-liens{display:none;position:absolute;top:100%;left:0;right:0;
@@ -475,11 +475,11 @@ footer a{color:#e8b563}
     <p class="sous-titre">Tous niveaux dès 16 ans — les mineurs rejoignent le club sous réserve
        d'une autorisation parentale. Vous pouvez venir essayer quelques séances avant de
        vous licencier : c'est le meilleur moyen de découvrir le club, sans engagement.</p>
-    <div class="prix prix-duo">
+    <div class="grp-cartes grp-cartes-duo">
       <div class="formule vedette reveal">
         <span class="pill">Compétition</span>
         <h3>Licence 2027</h3>
-        <p class="tarif">218,15 €<small> / saison</small></p>
+        <p class="montant">218,15 €<small> / saison</small></p>
         <ul>
           <li>Part Fédération (FFTRI) : 74,70 €</li>
           <li>Part Ligue régionale (PACA) : 38,00 €</li>
@@ -494,7 +494,7 @@ footer a{color:#e8b563}
       <div class="formule reveal" style="border:2px solid var(--vert)">
         <span class="pill pill-vert">Loisir</span>
         <h3>Licence 2027</h3>
-        <p class="tarif">163,65 €<small> / saison</small></p>
+        <p class="montant">163,65 €<small> / saison</small></p>
         <ul>
           <li>Frais de licence FFTRI (fédération + ligue PACA) : 58,20 €</li>
           <li>Assurance responsabilité civile + individuelle de base, correspondant au minimum exigé par l'association : 5,45 €</li>
