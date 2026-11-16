@@ -223,7 +223,7 @@ footer a{color:#e8b563}
   .nav-liens a{font-size:1rem;padding:.5rem 0}
 }
 /* Navigation PC de largeur moyenne : tout le menu reste visible */
-@media(min-width:881px) and (max-width:1250px){
+@media(min-width:881px){
   .nav-liens{gap:.9rem}
   .nav-liens a{font-size:.75rem;letter-spacing:.02em}
   nav{gap:.6rem;padding:.6rem clamp(1rem,3vw,1.8rem)}
@@ -612,6 +612,7 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+setTimeout(() => { document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible')); }, 2000);
 
 </script>
 </body>
