@@ -67,7 +67,7 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;
 .logo{display:flex;align-items:center;gap:.6rem;color:#fff;font-family:var(--font-titre);
   font-size:1.25rem;letter-spacing:.08em;text-decoration:none;font-weight:700;white-space:nowrap}
 .logo svg{width:56px;height:56px;flex-shrink:0}
-.nav-liens{display:flex;gap:1.4rem;list-style:none}
+.nav-liens{display:flex;gap:1.2rem;list-style:none;flex-wrap:wrap}
 .nav-liens a{color:#e6eef7;text-decoration:none;font-size:.85rem;font-weight:600;
   letter-spacing:.04em;text-transform:uppercase;padding:.4rem 0;border-bottom:2px solid transparent}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
@@ -214,6 +214,15 @@ footer a{color:#e8b563}
     background:rgba(15,15,15,.97);flex-direction:column;padding:1.1rem 1.5rem 1.4rem;gap:1rem}
   .nav-liens.ouvert{display:flex}
   .nav-liens a{font-size:1rem;padding:.5rem 0}
+}
+/* Navigation PC de largeur moyenne : tout le menu reste visible */
+@media(min-width:881px) and (max-width:1250px){
+  .nav-liens{gap:.9rem}
+  .nav-liens a{font-size:.75rem;letter-spacing:.02em}
+  nav{gap:.6rem;padding:.6rem clamp(1rem,3vw,1.8rem)}
+  nav .btn{padding:.5rem .8rem;font-size:.75rem}
+  .logo{font-size:1.05rem}
+  .logo svg{width:44px;height:44px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 /* ---- Partenaires ---- */
