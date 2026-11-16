@@ -249,6 +249,8 @@ footer a{color:#e8b563}
   font-size:1.05rem;text-align:center;line-height:1.3}
 .partenaires small{color:var(--gris);font-size:.8rem;text-align:center}
 @media (max-width:760px){.partenaires{grid-template-columns:1fr}}
+.velo-lien-mobile{display:none;margin-top:.6rem}
+@media(max-width:880px){.velo-video iframe{display:none}.velo-lien-mobile{display:inline-block}}
 </style>
 </head>
 <body>
@@ -463,8 +465,14 @@ footer a{color:#e8b563}
         <img src="https://lh3.googleusercontent.com/d/12Yv1ZZOkkx_EOsiRY_dAilJ4xgY9isDf=w1200" alt="Veloroc 2026, photo 4" style="width:100%;border-radius:8px;display:block" onerror="this.remove()" />
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin-top:.8rem">
-        <iframe src="https://drive.google.com/file/d/1ewNV7dPBrQZHbmmAC0tkxnSwZ0Zd2H2q/preview" title="Veloroc 2026, vidéo 1" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px" loading="lazy" allow="autoplay"></iframe>
-        <iframe src="https://drive.google.com/file/d/1YmWXxg1JS2JTy9zs0dC1g5G6ESQ0Fy33/preview" title="Veloroc 2026, vidéo 2" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px" loading="lazy" allow="autoplay"></iframe>
+        <div class="velo-video">
+          <iframe src="https://drive.google.com/file/d/1ewNV7dPBrQZHbmmAC0tkxnSwZ0Zd2H2q/preview" title="Veloroc 2026, vidéo 1" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px" loading="lazy" allow="autoplay"></iframe>
+          <a class="btn velo-lien-mobile" href="https://drive.google.com/file/d/1ewNV7dPBrQZHbmmAC0tkxnSwZ0Zd2H2q/view" target="_blank" rel="noopener">▶ Voir la vidéo 1 sur Drive</a>
+        </div>
+        <div class="velo-video">
+          <iframe src="https://drive.google.com/file/d/1YmWXxg1JS2JTy9zs0dC1g5G6ESQ0Fy33/preview" title="Veloroc 2026, vidéo 2" style="width:100%;aspect-ratio:16/9;border:0;border-radius:8px" loading="lazy" allow="autoplay"></iframe>
+          <a class="btn velo-lien-mobile" href="https://drive.google.com/file/d/1YmWXxg1JS2JTy9zs0dC1g5G6ESQ0Fy33/view" target="_blank" rel="noopener">▶ Voir la vidéo 2 sur Drive</a>
+        </div>
       </div>
       </details>
     </div>
